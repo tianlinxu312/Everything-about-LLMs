@@ -1,6 +1,6 @@
 # Everything-about-LLMs
 
-## Kaparthy's nanoGPT
+## Getting started: Kaparthy's nanoGPT
 [This folder](./karpathys_gpt) contains Kaparthy's implementation of a mini version of GPT. 
 You can run it to train a character-level language model on your laptop to generate shakespearean (well kind of :see_no_evil:) text.
 He did a very nice tutorial to walk through the code almost line by line. 
