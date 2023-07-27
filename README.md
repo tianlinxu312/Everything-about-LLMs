@@ -33,7 +33,7 @@ Prepare the data:
 python kaparthys_gpt/data/shakespeare_char/prepare.py
 ```
 
-To train in the model on a MacBook: 
+To train the model on a MacBook: 
 ```
 python kaparthys_gpt/train.py --dataset shakespeare_char --batch_size 32 --lr 0.0001 --n_epochs 10 --n_workers 0
 ```
