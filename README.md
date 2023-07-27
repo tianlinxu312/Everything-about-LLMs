@@ -5,7 +5,7 @@
 You can run it to train a character-level language model on your laptop to generate shakespearean (well kind of :see_no_evil:) text.
 He did a very nice tutorial to walk through the code almost line by line. 
 You can watch it [here](https://www.youtube.com/watch?v=kCc8FmEb1nY).
-If you are completely new to language modelling, this [video](https://www.youtube.com/watch?v=PaCmpygFfXo) may help you to understand more basics.
+If you are completely new to language modelling, [this video](https://www.youtube.com/watch?v=PaCmpygFfXo) may help you to understand more basics.
 
 You can find much more details about the code in [Kaparthy's original repo](https://github.com/karpathy/nanoGPT/tree/master#install). This folder here only contains the minimal running code. 
 
