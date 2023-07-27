@@ -2,12 +2,12 @@
 
 ## Kaparthy's nanoGPT
 [This folder](./karpathys_gpt) contains Kaparthy's implementation of a mini version of GPT. 
-You can run it to train a character-level language model to generate shakespearean (well kind of) text on your laptop.
+You can run it to train a character-level language model to generate shakespearean (well kind of :joy:) text on your laptop.
 He did a very nice tutorial to walk through the code almost line by line. 
 You can watch it [here](https://www.youtube.com/watch?v=kCc8FmEb1nY).
 If you are completely new to language modelling, this [video](https://www.youtube.com/watch?v=PaCmpygFfXo) may help you to understand more basics.
 
-You can also find much more details about the code in [Kaparthy's original repo](https://github.com/karpathy/nanoGPT/tree/master#install). This folder here only contains the minimal running code. 
+You can find much more details about the code in [Kaparthy's original repo](https://github.com/karpathy/nanoGPT/tree/master#install). This folder here only contains the minimal running code. 
 
 #### Run the code
 Copying the dependencies needed to run this code over:
