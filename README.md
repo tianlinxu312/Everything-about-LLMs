@@ -20,9 +20,9 @@ read the paper first:
 [LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685), 2021,
 Edward J. Hu*, Yelong Shen*, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, Weizhu Chen
 
-I wrote a notebook to show how to fine-tune a **reeeeal** simple binary classification model with LoRA, see [here](./LoRA.ipynb).
+I wrote a notebook to show how to fine-tune a **reeeeaaaal** simple binary classification model with LoRA, see [here](./LoRA.ipynb).
 
-Of course, LoRA is already implemented for larger models as a library.  Here's another notebook here (coming soon) on how to fine-tune LLaMA 2 with LoRA.
+Of course, LoRA is already implemented for larger models as a library.  Here's another notebook here (coming soon) on how to fine-tune LLaMA 2 with the LoRA library.
 
 ### QLoRA
 
