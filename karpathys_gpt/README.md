@@ -9,6 +9,7 @@ pip install torch numpy transformers datasets tiktoken wandb tqdm
 --------------------------------
 Dependencies:
 - pytorch <3
+  
 - numpy <3
 - transformers for huggingface transformers <3 (to load GPT-2 checkpoints)
 - datasets for huggingface datasets <3 (if you want to download + preprocess OpenWebText)
