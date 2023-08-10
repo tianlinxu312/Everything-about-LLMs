@@ -1,5 +1,14 @@
 # Everything-about-LLMs
 
+1. [Getting started](##Getting started: Karpathy's nanoGPT)
+2. [Fine-tuning](##Fine-tuning)
+    1. [LoRA](###LoRA)
+    2. [QLoRA](###QLoRA)
+    3. [RLHF](###RLHF)
+4. [Multimodal models](##Multimodal models)
+    1.[CLIP](###CLIP) 
+3. [Engineering magics of training an LLM](##Engineering magics of training an LLM)
+
 ## Getting started: Karpathy's nanoGPT
 [This folder](./karpathys_gpt) contains Karpathy's implementation of a mini version of GPT. 
 You can run it to train a character-level language model on your laptop to generate shakespearean (well kind of :see_no_evil:) text.
@@ -8,10 +17,10 @@ You can watch it [here](https://www.youtube.com/watch?v=kCc8FmEb1nY).
 If you are completely new to language modelling, [this video](https://www.youtube.com/watch?v=PaCmpygFfXo) may help you to understand more basics.
 
 You can find much more details about the code in [Karpathy's original repo](https://github.com/karpathy/nanoGPT/tree/master#install). 
-This folder here only contains the minimal running code. 
+The code in this folder has been adapted to contain the minimal running code. 
 
 
-## Fine-tuning LLMs
+## Fine-tuning
 ### LoRA
 
 If you don't know what LoRA is, you can watch this Toutube video [here](https://www.youtube.com/watch?v=dA-NhCtrrVE) or
@@ -27,5 +36,9 @@ Of course, LoRA is already implemented for larger models as a library.  Here's a
 ### QLoRA
 
 ### RLHF
+
+## Multimodal models
+
+### CLIP
 
 ## Engineering magics of training an LLM
