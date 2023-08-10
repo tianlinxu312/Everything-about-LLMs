@@ -34,7 +34,7 @@ read the [LoRA paper](https://arxiv.org/abs/2106.09685)[^1] first.
 
 As discussed in the [LoRA for LLMs notebook](./LoRA_for_LLMs.ipynb), we only need to train about 12% of the original parameter count by applying this low rank representation.  However, we still have to load the entire model, as the low rank weight matrix is added to the orginal weights. For the smallest Llama 2 model with 7 billion parameters, it will require 28G memory on the GPU allocated just to store the parameters, making it impossible to train on lower-end GPUs such as T4 or V100.  
 
-Therefore, (**drum rolls**) [QLoRA](https://arxiv.org/pdf/2305.14314.pdf)[^2] was proposed.  QLoRA loads the 4-bit quantized weights from a pretrained model, and then apply LoRA to fine tune the model.  There are more technical details you may be interested in. If so, you can read the paper or watch this video [here](https://www.youtube.com/watch?v=TPcXVJ1VSRI). 
+Therefore, (**...drum rolls...**) [QLoRA](https://arxiv.org/pdf/2305.14314.pdf)[^2] was proposed.  QLoRA loads the 4-bit quantized weights from a pretrained model, and then apply LoRA to fine tune the model.  There are more technical details you may be interested in. If so, you can read the paper or watch this video [here](https://www.youtube.com/watch?v=TPcXVJ1VSRI). 
 
 With the LoRA library (check the notebook), it is very easy to adopt QLoRA.  All you need to do is to specify in the configuration as below: 
 ```
