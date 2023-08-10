@@ -22,7 +22,7 @@ Edward J. Hu*, Yelong Shen*, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean
 
 I wrote a notebook to show how to fine-tune a **reeeeaaaal** simple binary classification model with LoRA, see [here](./LoRA.ipynb).
 
-Of course, LoRA is already implemented for larger models as a library.  Here's another notebook here (coming soon) on how to fine-tune LLaMA 2 with the LoRA library.
+Of course, LoRA is already implemented for larger models as a library.  Here's another notebook [here](./LoRA_for_LLMs.ipynb) on how to fine-tune LLaMA 2 with the LoRA library.
 
 ### QLoRA
 
