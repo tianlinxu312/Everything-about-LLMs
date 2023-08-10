@@ -23,15 +23,12 @@ The code in this folder has been adapted to contain the minimal running code.
 ## Fine-tuning
 ### LoRA
 
-If you don't know what LoRA is, you can watch this Toutube video [here](https://www.youtube.com/watch?v=dA-NhCtrrVE) or
-read the paper first: 
+If you don't know what LoRA is, you can watch this Toutube video [here](https://www.youtube.com/watch?v=dA-NhCtrrVE), or
+read the [LoRA paper](https://arxiv.org/abs/2106.09685)[^1] first. 
 
-[LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685), 2021,
-Edward J. Hu*, Yelong Shen*, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, Weizhu Chen
+- Toy problem: I wrote a notebook to show how to fine-tune a **reeeeaaaal** simple binary classification model with LoRA, see [here](./LoRA.ipynb).
 
-I wrote a notebook to show how to fine-tune a **reeeeaaaal** simple binary classification model with LoRA, see [here](./LoRA.ipynb).
-
-Of course, LoRA is already implemented for larger models as a library.  Here's another notebook [here](./LoRA_for_LLMs.ipynb) on how to fine-tune LLaMA 2 with the LoRA library.
+ - The real deal: of course, some amazing people already implemented LoRA as a library.  Here's [the notebook](./LoRA_for_LLMs.ipynb) on how to fine-tune LLaMA 2 with the LoRA library.
 
 ### QLoRA
 
@@ -42,3 +39,9 @@ Of course, LoRA is already implemented for larger models as a library.  Here's a
 ### CLIP
 
 ## Engineering magics of training an LLM
+
+
+## Reference:
+
+[^1]: [LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685), 2021,
+Edward J. Hu*, Yelong Shen*, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, Weizhu Chen
