@@ -32,6 +32,26 @@ read the [LoRA paper](https://arxiv.org/abs/2106.09685)[^1] first.
 
 ### QLoRA
 
+As discussed in the [LoRA for LLMs notebook](./LoRA_for_LLMs.ipynb), we only need to train about 12% of the original parameter count by applying this low rank representation.  However, we still have to load the entire model, as the low rank weight matrix is added to the orginal weights. For the smallest Llama 2 model with 7 billion parameters, it will require 28G memory on the GPU allocated just to store the parameters, making it impossible to train on lower-end GPUs such as T4 or V100.  
+
+Therefore, (**drum rolls**) [QLoRA](https://arxiv.org/pdf/2305.14314.pdf)[^2] was proposed.  QLoRA loads the 4-bit quantized weights from a pretrained model, and then apply LoRA to fine tune the model.  There are more technical details you may be interested in. If so, you can read the paper or watch this video [here](https://www.youtube.com/watch?v=TPcXVJ1VSRI). 
+
+With the LoRA library (check the notebook), it is very easy to adopt QLoRA.  All you need to do is to specify in the configuration as below: 
+```
+model = AutoModelForCausalLM.from_pretrained("meta-llama/Llama-2-7b-chat-hf",
+                                             device_map='auto',
+                                             torch_dtype=torch.float16,
+                                             use_auth_token=True,
+                                             load_in_4bit=True, # <------ *here*
+                                             #  load_in_8bit=True,
+                                             )
+```
+
+As a result, we can fine tune a 7-billon-param model on a T4 GPU.  Check out the RAM usage during training: 
+
+![image](./imgs/GPU_usage.png)
+
+
 ### RLHF
 
 ## Multimodal models
@@ -43,5 +63,6 @@ read the [LoRA paper](https://arxiv.org/abs/2106.09685)[^1] first.
 
 ## Reference:
 
-[^1]: [LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685), 2021,
-Edward J. Hu*, Yelong Shen*, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, Weizhu Chen
+[^1]: Hu, E.J., Shen, Y., Wallis, P., Allen-Zhu, Z., Li, Y., Wang, S., Wang, L. and Chen, W., 2021. [LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685), arXiv preprint arXiv:2106.09685
+
+[^2]: Dettmers, T., Pagnoni, A., Holtzman, A. and Zettlemoyer, L., 2023. [QLoRA: Efficient Finetuning of Quantized LLMs](https://arxiv.org/pdf/2305.14314.pdf). arXiv preprint arXiv:2305.14314.
