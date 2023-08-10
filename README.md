@@ -1,13 +1,13 @@
 # Everything-about-LLMs
 
-1. [Getting started](##Getting started: Karpathy's nanoGPT)
+1. [Getting started](##Getting_started:_Karpathy's_nanoGPT)
 2. [Fine-tuning](##Fine-tuning)
     1. [LoRA](###LoRA)
     2. [QLoRA](###QLoRA)
     3. [RLHF](###RLHF)
-4. [Multimodal models](##Multimodal models)
+4. [Multimodal models](##Multimodal_models)
     1.[CLIP](###CLIP) 
-3. [Engineering magics of training an LLM](##Engineering magics of training an LLM)
+3. [Engineering magics of training an LLM](##Engineering_magics_of_training_an_LLM)
 
 ## Getting started: Karpathy's nanoGPT
 [This folder](./karpathys_gpt) contains Karpathy's implementation of a mini version of GPT. 
