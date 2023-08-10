@@ -48,7 +48,7 @@ model = AutoModelForCausalLM.from_pretrained("meta-llama/Llama-2-7b-chat-hf",
 ```
 Of course, quantization leads to information loss.  This is a tradeoff between memory and accuracy.  If needed, there's also an 8-bit option. 
 
-As a result, we can fine tune a 7-billon-param model on a T4 GPU.  Check out the RAM usage during training: 
+As a result, we can fine tune a 7-billon-param model on a single T4 GPU.  Check out the RAM usage during training: 
 
 ![image](./imgs/GPU_usage.png)
 
