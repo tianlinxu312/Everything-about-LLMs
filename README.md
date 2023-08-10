@@ -1,6 +1,6 @@
 # Everything-about-LLMs
 
-1. [Getting started](##Getting-started:-Karpathy's-nanoGPT)
+1. [Getting started](##Getting-started-Karpathys-nanoGPT)
 2. [Fine-tuning](##Fine-tuning)
     1. [LoRA](###LoRA)
     2. [QLoRA](###QLoRA)
