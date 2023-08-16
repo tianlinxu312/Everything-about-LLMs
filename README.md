@@ -12,7 +12,7 @@
 4. [Engineering magics of training an LLM](#Engineering-magics-of-training-an-LLM)
     1. [Memory Optimization: ZeRO](#Memory-Optimization-ZeRO)
     2. [Model parallelism: MegatronLM](#Model-parallelism-MegatronLM)
-    3. [Pipeline-Parallelism](#Pipeline-Parallelism)
+    3. [Pipeline Parallelism](#Pipeline-Parallelism)
     4. [Checkpointing and Deterministic Training](#Checkpointing-and-Deterministic-Training)
     5. [FlashAttention](#FlashAttention)
     6. [KV caching](#KV-caching)
