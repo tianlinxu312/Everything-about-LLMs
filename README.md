@@ -73,7 +73,7 @@ Concenptually, CLIP is very simple. The figure in the CLIP paper[^3] says it all
 ![image](./imgs/clip.png)
 
 For this visual-language application, step (1) in the figure needs a few components:
-- images with text describing them
+- data: images with text describing them
 - an visual encoder to extract image features
 - a language encoder to extract text features
 - learn by maximising the similarity between the paired image and text features (contrastive learning)
