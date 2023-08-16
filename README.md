@@ -59,6 +59,9 @@ As a result, we can fine tune a 7-billon-param model on a single T4 GPU.  Check 
 
 ### CLIP
 
+![image](./imgs/clip.png)
+
+
 ### DALL·E 2
 
 ### Stable Diffusion
