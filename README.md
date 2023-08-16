@@ -5,9 +5,18 @@
     1. [LoRA](#LoRA)
     2. [QLoRA](#QLoRA)
     3. [RLHF](#RLHF)
-4. [Multimodal models](#Multimodal-models)
-    1. [CLIP](#CLIP) 
-3. [Engineering magics of training an LLM](#Engineering-magics-of-training-an-LLM)
+3. [Multimodal models](#Multimodal-models)
+    1. [CLIP](#CLIP)
+    2. [DALL·E 2](#DALL·E-2)
+    3. [Stable Diffusion](#Stable-Diffusion)
+4. [Engineering magics of training an LLM](#Engineering-magics-of-training-an-LLM)
+    1. [Memory Optimization: ZeRO](#Memory-Optimization-ZeRO)
+    2. [Model parallelism: MegatronLM](#Model-parallelism-MegatronLM)
+    3. [Pipeline-Parallelism](#Pipeline-Parallelism)
+    4. [Checkpointing and Deterministic Training](#Checkpointing-and-Deterministic-Training)
+    5. [FlashAttention](#FlashAttention)
+    6. [KV caching](#KV-caching)
+
 
 ## Getting started: Karpathy's nanoGPT
 [This folder](./karpathys_gpt) contains Karpathy's implementation of a mini version of GPT. 
