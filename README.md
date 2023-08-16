@@ -89,6 +89,8 @@ As a result, we can fine tune a 7-billon-param model on a single T4 GPU.  Check 
 
 ### KV caching
 
+### Data efficiency
+
 ## Reference:
 
 [^1]: Hu, E.J., Shen, Y., Wallis, P., Allen-Zhu, Z., Li, Y., Wang, S., Wang, L. and Chen, W., 2021. [LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685), arXiv preprint arXiv:2106.09685
