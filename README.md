@@ -33,7 +33,7 @@ The code in this folder has been adapted to contain the minimal running code.
 ### LoRA
 
 If you don't know what LoRA is, you can watch this Toutube video [here](https://www.youtube.com/watch?v=dA-NhCtrrVE), or
-read the [LoRA paper](https://arxiv.org/abs/2106.09685)[^1] first. 
+read the LoRA paper[^1] first. 
 
 - Toy problem: I wrote a notebook to show how to fine-tune a **reeeeaaaal** simple binary classification model with LoRA, see [here](./LoRA.ipynb).
 
@@ -43,7 +43,7 @@ read the [LoRA paper](https://arxiv.org/abs/2106.09685)[^1] first.
 
 As discussed in the [LoRA for LLMs notebook](./LoRA_for_LLMs.ipynb), we only need to train about 12% of the original parameter count by applying this low rank representation.  However, we still have to load the entire model, as the low rank weight matrix is added to the orginal weights. For the smallest Llama 2 model with 7 billion parameters, it will require 28G memory on the GPU allocated just to store the parameters, making it impossible to train on lower-end GPUs such as T4 or V100.  
 
-Therefore, (**...drum rolls...**) [QLoRA](https://arxiv.org/pdf/2305.14314.pdf)[^2] was proposed.  QLoRA loads the 4-bit quantized weights from a pretrained model, and then apply LoRA to fine tune the model.  There are more technical details you may be interested in. If so, you can read the paper or watch this video [here](https://www.youtube.com/watch?v=TPcXVJ1VSRI). 
+Therefore, (**...drum rolls...**) QLoRA[^2] was proposed.  QLoRA loads the 4-bit quantized weights from a pretrained model, and then apply LoRA to fine tune the model.  There are more technical details you may be interested in. If so, you can read the paper or watch this video [here](https://www.youtube.com/watch?v=TPcXVJ1VSRI). 
 
 With the LoRA library (check the notebook), it is very easy to adopt QLoRA.  All you need to do is to specify in the configuration as below: 
 ```
@@ -68,7 +68,17 @@ As a result, we can fine tune a 7-billon-param model on a single T4 GPU.  Check 
 
 ### CLIP
 
+Concenptually, CLIP is very simple. The figure in the CLIP paper[^3] says it all.  
+
 ![image](./imgs/clip.png)
+
+For this visual-language application, step (1) in the figure needs a few components:
+- images with text decribing them
+- an visual encoder to extract image features
+- a language encoder to extract text features
+- learn by maximising the similarity between the paired image and text features (contrastive learning)
+
+I wrote a (very) simple example in [this notebook](./CLIP_for_MNIST.ipynb) which implements and explains the contrastive learning objective, and describes the components in step (2) and (3).  
 
 
 ### DALL·E 2
@@ -96,3 +106,5 @@ As a result, we can fine tune a 7-billon-param model on a single T4 GPU.  Check 
 [^1]: Hu, E.J., Shen, Y., Wallis, P., Allen-Zhu, Z., Li, Y., Wang, S., Wang, L. and Chen, W., 2021. [LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685), arXiv preprint arXiv:2106.09685
 
 [^2]: Dettmers, T., Pagnoni, A., Holtzman, A. and Zettlemoyer, L., 2023. [QLoRA: Efficient Finetuning of Quantized LLMs](https://arxiv.org/pdf/2305.14314.pdf). arXiv preprint arXiv:2305.14314.
+
+[^3]: Radford, A., Kim, J.W., Hallacy, C., Ramesh, A., Goh, G., Agarwal, S., Sastry, G., Askell, A., Mishkin, P., Clark, J. and Krueger, G., 2021, July. [Learning transferable visual models from natural language supervision](http://proceedings.mlr.press/v139/radford21a). In International conference on machine learning (pp. 8748-8763). PMLR.
