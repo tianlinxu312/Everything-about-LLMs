@@ -59,8 +59,23 @@ As a result, we can fine tune a 7-billon-param model on a single T4 GPU.  Check 
 
 ### CLIP
 
+### DALL·E 2
+
+### Stable Diffusion
+
 ## Engineering magics of training an LLM
 
+### Memory Optimization: ZeRO
+
+### Model parallelism: MegatronLM
+
+### Pipeline Parallelism
+
+### Checkpointing and Deterministic Training  
+
+### FlashAttention
+
+## KV caching
 
 ## Reference:
 
