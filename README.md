@@ -7,8 +7,9 @@
     3. [RLHF](#RLHF)
 3. [Multimodal models](#Multimodal-models)
     1. [CLIP](#CLIP)
-    2. [DALL·E 2](#DALL·E-2)
-    3. [Stable Diffusion](#Stable-Diffusion)
+    2. [GLIDE](#GLIDE)
+    3. [DALL·E 2](#DALL·E-2)
+    4. [Stable Diffusion](#Stable-Diffusion)
 4. [Engineering magics for training an LLM](#Engineering-magics-for-training-an-LLM)
     1. [Memory Optimization: ZeRO](#Memory-Optimization-ZeRO)
     2. [Model parallelism: MegatronLM](#Model-parallelism-MegatronLM)
@@ -57,9 +58,9 @@ model = AutoModelForCausalLM.from_pretrained("meta-llama/Llama-2-7b-chat-hf",
                                              #  load_in_8bit=True,
                                              )
 ```
-Of course, quantization leads to information loss.  This is a tradeoff between memory and accuracy.  If needed, there's also an 8-bit option. 
+Unfortunately, quantization leads to an information loss.  This is a tradeoff between memory and accuracy.  If needed, there's also an 8-bit option. 
 
-As a result, we can fine tune a 7-billon-param model on a single T4 GPU.  Check out the RAM usage during training: 
+By choosing to load the entire pre-trained model in 4-bit, we can fine-tune a 7-billon-parameter model on a single T4 GPU.  Check out the RAM usage during training: 
 
 ![image](./imgs/GPU_usage.png)
 
@@ -82,8 +83,18 @@ For this visual-language application, step (1) in the figure needs a few compone
 
 I wrote a (very) simple example in [this notebook](./CLIP_for_MNIST.ipynb) which implements and explains the contrastive learning objective, and describes the components in step (2) and (3). However, I used the same style of text labels for training and testing.  So no zero-shot here.  
 
+### GLIDE
+
 
 ### DALL·E 2
+
+DALL·E 2 is another concenptually simply model that produces amazing results.  
+
+The first half of the model is a pre-trained CLIP (frozen once trained), i.e., the part above the dash line in the figure in the DALL·E 2 paper[^4], see below.  
+
+![image](./imgs/dalle2.png)
+
+In CLIP, we have trained two encoders to extract features from image and text inputs.  
 
 ### Stable Diffusion
 
@@ -112,3 +123,5 @@ I wrote a (very) simple example in [this notebook](./CLIP_for_MNIST.ipynb) which
 [^2]: Dettmers, T., Pagnoni, A., Holtzman, A. and Zettlemoyer, L., 2023. [QLoRA: Efficient Finetuning of Quantized LLMs](https://arxiv.org/pdf/2305.14314.pdf). arXiv preprint arXiv:2305.14314.
 
 [^3]: Radford, A., Kim, J.W., Hallacy, C., Ramesh, A., Goh, G., Agarwal, S., Sastry, G., Askell, A., Mishkin, P., Clark, J. and Krueger, G., 2021, July. [Learning transferable visual models from natural language supervision](http://proceedings.mlr.press/v139/radford21a). In International conference on machine learning (pp. 8748-8763). PMLR.
+
+[^4]: Ramesh, A., Dhariwal, P., Nichol, A., Chu, C. and Chen, M., 2022. [Hierarchical text-conditional image generation with clip latents](https://cdn.openai.com/papers/dall-e-2.pdf). arXiv preprint arXiv:2204.06125, 1(2), p.3.
