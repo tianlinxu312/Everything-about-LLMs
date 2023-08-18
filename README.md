@@ -103,7 +103,7 @@ I wrote a (very) simple example in [this notebook](./CLIP_for_MNIST.ipynb) which
 
 ### Gradient checkpointing
 
-### 
+### Data efficiency
 
 ## Reference:
 
