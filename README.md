@@ -78,7 +78,7 @@ For this visual-language application, step (1) in the figure needs a few compone
 - data: images with text describing them
 - a visual encoder to extract image features
 - a language encoder to extract text features
-- learn by maximising the similarity between the paired image and text features (contrastive learning)
+- learn by maximising the similarity between the paired image and text features indicated by the blue squares in the matrix in the figure (contrastive learning)
 
 I wrote a (very) simple example in [this notebook](./CLIP_for_MNIST.ipynb) which implements and explains the contrastive learning objective, and describes the components in step (2) and (3). However, I used the same style of text labels for training and testing.  So no zero-shot here.  
 
