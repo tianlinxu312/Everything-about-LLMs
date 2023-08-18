@@ -9,13 +9,15 @@
     1. [CLIP](#CLIP)
     2. [DALL·E 2](#DALL·E-2)
     3. [Stable Diffusion](#Stable-Diffusion)
-4. [Engineering magics of training an LLM](#Engineering-magics-of-training-an-LLM)
+4. [Engineering magics for training an LLM](#Engineering-magics-for-training-an-LLM)
     1. [Memory Optimization: ZeRO](#Memory-Optimization-ZeRO)
     2. [Model parallelism: MegatronLM](#Model-parallelism-MegatronLM)
     3. [Pipeline Parallelism](#Pipeline-Parallelism)
     4. [Checkpointing and Deterministic Training](#Checkpointing-and-Deterministic-Training)
     5. [FlashAttention](#FlashAttention)
     6. [KV caching](#KV-caching)
+    7. [Gradient checkpointing](#Gradient-checkpointing)
+    8. [Data efficiency](#Data-efficiency)
 
 
 ## Getting started: Karpathy's nanoGPT
@@ -85,7 +87,7 @@ I wrote a (very) simple example in [this notebook](./CLIP_for_MNIST.ipynb) which
 
 ### Stable Diffusion
 
-## Engineering magics of training an LLM
+## Engineering magics for training an LLM
 
 ### Memory Optimization: ZeRO
 
@@ -99,7 +101,9 @@ I wrote a (very) simple example in [this notebook](./CLIP_for_MNIST.ipynb) which
 
 ### KV caching
 
-### Data efficiency
+### Gradient checkpointing
+
+### 
 
 ## Reference:
 
