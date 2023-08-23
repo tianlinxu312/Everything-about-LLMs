@@ -85,6 +85,7 @@ I wrote a (very) simple example in [this notebook](./CLIP_for_MNIST.ipynb) which
 
 ### GLIDE
 
+GLIDE[^8] is a text-to-image diffusion model with CLIP as the guidance.  If you aren't familiar with diffusion models, you can watch [this video](https://www.youtube.com/watch?v=344w5h24-h8&list=PLpZBeKTZRGPPvAyM9DM-a6W0lugCo8WfC) for a quick explaination to the concept.  If you want more technical details, you can start with these papers: diffusion generative model[^5], DDPM[^6], DDIM[^7], and a variational perspective of diffusion models[^9].  
 
 ### DALL·E 2
 
@@ -125,3 +126,13 @@ In CLIP, we have trained two encoders to extract features from image and text in
 [^3]: Radford, A., Kim, J.W., Hallacy, C., Ramesh, A., Goh, G., Agarwal, S., Sastry, G., Askell, A., Mishkin, P., Clark, J. and Krueger, G., 2021, July. [Learning transferable visual models from natural language supervision](http://proceedings.mlr.press/v139/radford21a). In International conference on machine learning (pp. 8748-8763). PMLR.
 
 [^4]: Ramesh, A., Dhariwal, P., Nichol, A., Chu, C. and Chen, M., 2022. [Hierarchical text-conditional image generation with clip latents](https://cdn.openai.com/papers/dall-e-2.pdf). arXiv preprint arXiv:2204.06125, 1(2), p.3.
+
+[^5]: Sohl-Dickstein, Jascha; Weiss, Eric; Maheswaranathan, Niru; Ganguli, Surya (2015-06-01). [Deep Unsupervised Learning using Nonequilibrium Thermodynamics](http://proceedings.mlr.press/v37/sohl-dickstein15.pdf). Proceedings of the 32nd International Conference on Machine Learning. PMLR. 37: 2256–2265
+
+[^6]:Ho, J., Jain, A. and Abbeel, P., 2020. [Denoising diffusion probabilistic models](https://arxiv.org/pdf/2006.11239.pdf). Advances in neural information processing systems, 33, pp.6840-6851.
+
+[^7]: Song, J., Meng, C. and Ermon, S., 2020. [Denoising diffusion implicit models](https://arxiv.org/pdf/2010.02502.pdf). arXiv preprint arXiv:2010.02502.
+
+[^8]: Nichol, A., Dhariwal, P., Ramesh, A., Shyam, P., Mishkin, P., McGrew, B., Sutskever, I. and Chen, M., 2021. [Glide: Towards photorealistic image generation and editing with text-guided diffusion models](https://arxiv.org/pdf/2112.10741.pdf). arXiv preprint arXiv:2112.10741. 
+
+[^9]: Kingma, D., Salimans, T., Poole, B. and Ho, J., 2021. [Variational diffusion models](https://proceedings.neurips.cc/paper/2021/hash/b578f2a52a0229873fefc2a4b06377fa-Abstract.html). Advances in neural information processing systems, 34, pp.21696-21707.
