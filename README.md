@@ -10,6 +10,7 @@
     2. [GLIDE](#GLIDE)
     3. [DALL·E 2](#DALL·E-2)
     4. [Stable Diffusion](#Stable-Diffusion)
+        1. [Image to Image model](#Image-to-Image)
 4. [Engineering magics for training an LLM](#Engineering-magics-for-training-an-LLM)
     1. [Memory Optimization: ZeRO](#Memory-Optimization-ZeRO)
     2. [Model parallelism: MegatronLM](#Model-parallelism-MegatronLM)
@@ -98,6 +99,10 @@ The first half of the model is a pre-trained CLIP (frozen once trained), i.e., t
 In CLIP, we have trained two encoders to extract features from image and text inputs.  
 
 ### Stable Diffusion
+
+#### Image to Image
+An implementation of Stable Diffusion Image-to-Image can be found [here](./stable_diffusion_img2img.py). Alternatively, you can also play with [this notebook](https://colab.research.google.com/drive/15MS1tAK69Nbdv6cnkN0U8GrJAYwtbuw9?usp=sharing).  
+
 
 ## Engineering magics for training an LLM
 
