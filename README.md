@@ -10,7 +10,7 @@
     2. [GLIDE](#GLIDE)
     3. [DALL·E 2](#DALL·E-2)
     4. [Stable Diffusion](#Stable-Diffusion)
-        1. [Image to Image model](#Image-to-Image)
+        1. [Implementation: Image to Image](#Image-to-Image)
 4. [Engineering magics for training an LLM](#Engineering-magics-for-training-an-LLM)
     1. [Memory Optimization: ZeRO](#Memory-Optimization-ZeRO)
     2. [Model parallelism: MegatronLM](#Model-parallelism-MegatronLM)
