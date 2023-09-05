@@ -7,15 +7,18 @@
     3. [RLHF](#RLHF)
 3. [Multimodal models](#Multimodal-models)
     1. [CLIP](#CLIP)
-    2. [DALL·E 2](#DALL·E-2)
-    3. [Stable Diffusion](#Stable-Diffusion)
-4. [Engineering magics of training an LLM](#Engineering-magics-of-training-an-LLM)
+    2. [GLIDE](#GLIDE)
+    3. [DALL·E 2](#DALL·E-2)
+    4. [Stable Diffusion](#Stable-Diffusion)
+4. [Engineering magics for training an LLM](#Engineering-magics-for-training-an-LLM)
     1. [Memory Optimization: ZeRO](#Memory-Optimization-ZeRO)
     2. [Model parallelism: MegatronLM](#Model-parallelism-MegatronLM)
     3. [Pipeline Parallelism](#Pipeline-Parallelism)
     4. [Checkpointing and Deterministic Training](#Checkpointing-and-Deterministic-Training)
     5. [FlashAttention](#FlashAttention)
     6. [KV caching](#KV-caching)
+    7. [Gradient checkpointing](#Gradient-checkpointing)
+    8. [Data efficiency](#Data-efficiency)
 
 
 ## Getting started: Karpathy's nanoGPT
@@ -55,9 +58,9 @@ model = AutoModelForCausalLM.from_pretrained("meta-llama/Llama-2-7b-chat-hf",
                                              #  load_in_8bit=True,
                                              )
 ```
-Of course, quantization leads to information loss.  This is a tradeoff between memory and accuracy.  If needed, there's also an 8-bit option. 
+Unfortunately, quantization leads to an information loss.  This is a tradeoff between memory and accuracy.  If needed, there's also an 8-bit option. 
 
-As a result, we can fine tune a 7-billon-param model on a single T4 GPU.  Check out the RAM usage during training: 
+By choosing to load the entire pre-trained model in 4-bit, we can fine-tune a 7-billon-parameter model on a single T4 GPU.  Check out the RAM usage during training: 
 
 ![image](./imgs/GPU_usage.png)
 
@@ -76,16 +79,27 @@ For this visual-language application, step (1) in the figure needs a few compone
 - data: images with text describing them
 - a visual encoder to extract image features
 - a language encoder to extract text features
-- learn by maximising the similarity between the paired image and text features (contrastive learning)
+- learn by maximising the similarity between the paired image and text features indicated by the blue squares in the matrix in the figure (contrastive learning)
 
 I wrote a (very) simple example in [this notebook](./CLIP_for_MNIST.ipynb) which implements and explains the contrastive learning objective, and describes the components in step (2) and (3). However, I used the same style of text labels for training and testing.  So no zero-shot here.  
 
+### GLIDE
+
+GLIDE[^8] is a text-to-image diffusion model with CLIP as the guidance.  If you aren't familiar with diffusion models, you can watch [this video](https://www.youtube.com/watch?v=344w5h24-h8&list=PLpZBeKTZRGPPvAyM9DM-a6W0lugCo8WfC) for a quick explaination to the concept.  If you want more technical details, you can start with these papers: diffusion generative model[^5], DDPM[^6], DDIM[^7], and a variational perspective of diffusion models[^9].  
 
 ### DALL·E 2
 
+DALL·E 2 is another concenptually simply model that produces amazing results.  
+
+The first half of the model is a pre-trained CLIP (frozen once trained), i.e., the part above the dash line in the figure in the DALL·E 2 paper[^4], see below.  
+
+![image](./imgs/dalle2.png)
+
+In CLIP, we have trained two encoders to extract features from image and text inputs.  
+
 ### Stable Diffusion
 
-## Engineering magics of training an LLM
+## Engineering magics for training an LLM
 
 ### Memory Optimization: ZeRO
 
@@ -99,6 +113,8 @@ I wrote a (very) simple example in [this notebook](./CLIP_for_MNIST.ipynb) which
 
 ### KV caching
 
+### Gradient checkpointing
+
 ### Data efficiency
 
 ## Reference:
@@ -108,3 +124,15 @@ I wrote a (very) simple example in [this notebook](./CLIP_for_MNIST.ipynb) which
 [^2]: Dettmers, T., Pagnoni, A., Holtzman, A. and Zettlemoyer, L., 2023. [QLoRA: Efficient Finetuning of Quantized LLMs](https://arxiv.org/pdf/2305.14314.pdf). arXiv preprint arXiv:2305.14314.
 
 [^3]: Radford, A., Kim, J.W., Hallacy, C., Ramesh, A., Goh, G., Agarwal, S., Sastry, G., Askell, A., Mishkin, P., Clark, J. and Krueger, G., 2021, July. [Learning transferable visual models from natural language supervision](http://proceedings.mlr.press/v139/radford21a). In International conference on machine learning (pp. 8748-8763). PMLR.
+
+[^4]: Ramesh, A., Dhariwal, P., Nichol, A., Chu, C. and Chen, M., 2022. [Hierarchical text-conditional image generation with clip latents](https://cdn.openai.com/papers/dall-e-2.pdf). arXiv preprint arXiv:2204.06125, 1(2), p.3.
+
+[^5]: Sohl-Dickstein, Jascha; Weiss, Eric; Maheswaranathan, Niru; Ganguli, Surya (2015-06-01). [Deep Unsupervised Learning using Nonequilibrium Thermodynamics](http://proceedings.mlr.press/v37/sohl-dickstein15.pdf). Proceedings of the 32nd International Conference on Machine Learning. PMLR. 37: 2256–2265
+
+[^6]:Ho, J., Jain, A. and Abbeel, P., 2020. [Denoising diffusion probabilistic models](https://arxiv.org/pdf/2006.11239.pdf). Advances in neural information processing systems, 33, pp.6840-6851.
+
+[^7]: Song, J., Meng, C. and Ermon, S., 2020. [Denoising diffusion implicit models](https://arxiv.org/pdf/2010.02502.pdf). arXiv preprint arXiv:2010.02502.
+
+[^8]: Nichol, A., Dhariwal, P., Ramesh, A., Shyam, P., Mishkin, P., McGrew, B., Sutskever, I. and Chen, M., 2021. [Glide: Towards photorealistic image generation and editing with text-guided diffusion models](https://arxiv.org/pdf/2112.10741.pdf). arXiv preprint arXiv:2112.10741. 
+
+[^9]: Kingma, D., Salimans, T., Poole, B. and Ho, J., 2021. [Variational diffusion models](https://proceedings.neurips.cc/paper/2021/hash/b578f2a52a0229873fefc2a4b06377fa-Abstract.html). Advances in neural information processing systems, 34, pp.21696-21707.
