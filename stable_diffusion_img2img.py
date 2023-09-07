@@ -225,8 +225,7 @@ def main():
     diffuser = ImageToImageDiffuser(scheduler=scheduler, model_name='CompVis/stable-diffusion-v1-4',
                                     image_height=512, image_width=512, device=device)
 
-    images = Image.open("/content/sample_data/"
-                        "Leonardo_Diffusion_sticker_cartoon_cute_fox_white_background_Vermeer_style_12K_2.png")
+    images = Image.open("/path_to_sata/sample.png")
     prompt = 'a picasso style fox smiling'
 
     # sample images from prompt and conditioning image
