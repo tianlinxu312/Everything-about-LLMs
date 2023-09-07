@@ -225,8 +225,8 @@ def main():
     diffuser = ImageToImageDiffuser(scheduler=scheduler, model_name='CompVis/stable-diffusion-v1-4',
                                     image_height=512, image_width=512, device=device)
 
-    images = Image.open("/path_to_sata/sample.png")
-    prompt = 'a picasso style fox smiling'
+    images = Image.open("/path_to_data/sample.png")
+    prompt = 'a oil painting in the style of Picasso'
 
     # sample images from prompt and conditioning image
     generated_img = diffuser.prompt_to_img(prompt, [images], num_inference_steps=30, start_step=20,
