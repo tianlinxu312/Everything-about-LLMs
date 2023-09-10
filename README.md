@@ -88,6 +88,12 @@ I wrote a (very) simple example in [this notebook](./CLIP_for_MNIST.ipynb) which
 
 GLIDE[^8] is a text-to-image diffusion model with CLIP as the guidance.  If you aren't familiar with diffusion models, you can watch [this video](https://www.youtube.com/watch?v=344w5h24-h8&list=PLpZBeKTZRGPPvAyM9DM-a6W0lugCo8WfC) for a quick explaination to the concept.  If you want more technical details, you can start with these papers: diffusion generative model[^5], DDPM[^6], DDIM[^7], and a variational perspective of diffusion models[^9].  
 
+The classifier-guided diffusion model was intially proposed by Dhariwal & Nichol[^10]. The main idea is this: if the image generated is a dog, we want the parameters of the generative model in training to move towards the direction where it can be classified with the correct label by a *good* classifier, see the illustration below.   
+
+
+
+
+
 ### DALL·E 2
 
 DALL·E 2 is another concenptually simply model that produces amazing results.  
@@ -141,3 +147,5 @@ An implementation of Stable Diffusion Image-to-Image can be found [here](./stabl
 [^8]: Nichol, A., Dhariwal, P., Ramesh, A., Shyam, P., Mishkin, P., McGrew, B., Sutskever, I. and Chen, M., 2021. [Glide: Towards photorealistic image generation and editing with text-guided diffusion models](https://arxiv.org/pdf/2112.10741.pdf). arXiv preprint arXiv:2112.10741. 
 
 [^9]: Kingma, D., Salimans, T., Poole, B. and Ho, J., 2021. [Variational diffusion models](https://proceedings.neurips.cc/paper/2021/hash/b578f2a52a0229873fefc2a4b06377fa-Abstract.html). Advances in neural information processing systems, 34, pp.21696-21707.
+
+[^10]: Dhariwal, P. and Nichol, A., 2021. [Diffusion models beat gans on image synthesis](https://arxiv.org/pdf/2105.05233.pdf). Advances in neural information processing systems, 34, pp.8780-8794.
