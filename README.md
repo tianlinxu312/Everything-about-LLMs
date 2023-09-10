@@ -63,7 +63,9 @@ Unfortunately, quantization leads to an information loss.  This is a tradeoff be
 
 By choosing to load the entire pre-trained model in 4-bit, we can fine-tune a 7-billon-parameter model on a single T4 GPU.  Check out the RAM usage during training: 
 
-![image](./imgs/GPU_usage.png)
+<p align="center">
+<img src="./imgs/GPU_usage.png" alt="image" width="1000"/>
+</p>
 
 
 ### RLHF
@@ -90,9 +92,17 @@ GLIDE[^8] is a text-to-image diffusion model with CLIP as the guidance.  If you 
 
 The classifier-guided diffusion model was intially proposed by Dhariwal & Nichol[^10]. The main idea is this: if the image generated is a dog, we want the parameters of the generative model in training to move towards the direction where it can be classified with the correct label by a *good* classifier, see the illustration below.   
 
+<p align="center">
+<img src="./imgs/class_guided.png" alt="image" width="600"/>
+</p>
 
+It seems to be a great idea.  However, this approach requires training a seperate classifier. Morever, it is not easy to train a good classifier that works perfectly for the generated images. For this reason, Ho and Salimans[^11] proposed a classifier-free guidance, see the figure below. $c$ is the condition (for example, text) on which the images are generated, and $\emptyset$ indicates no condition.  So the model is encouraged to move towards the direction where images are generated with the conditions.  
 
+<p align="center">
+<img src="./imgs/class-free-guided.png" alt="image" width="550"/>
+</p>
 
+GLIDE uses a CLIP model to replace the classifier in their classifer-guided diffusion model.   
 
 ### DALL·E 2
 
@@ -149,3 +159,5 @@ An implementation of Stable Diffusion Image-to-Image can be found [here](./stabl
 [^9]: Kingma, D., Salimans, T., Poole, B. and Ho, J., 2021. [Variational diffusion models](https://proceedings.neurips.cc/paper/2021/hash/b578f2a52a0229873fefc2a4b06377fa-Abstract.html). Advances in neural information processing systems, 34, pp.21696-21707.
 
 [^10]: Dhariwal, P. and Nichol, A., 2021. [Diffusion models beat gans on image synthesis](https://arxiv.org/pdf/2105.05233.pdf). Advances in neural information processing systems, 34, pp.8780-8794.
+
+[^11]: Ho, J. and Salimans, T., 2022. [Classifier-free diffusion guidance](https://arxiv.org/abs/2207.12598). arXiv preprint arXiv:2207.12598.
