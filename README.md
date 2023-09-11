@@ -118,6 +118,10 @@ DALL·E 2 also enables classifier-free CLIP guidance as used in GLIDE by randoml
 
 ### Stable Diffusion
 
+<p align="center">
+<img src="./imgs/stable-diffusion.png" alt="image" width="950"/>
+</p>
+
 #### Image to Image
 An implementation of Stable Diffusion Image-to-Image can be found [here](./stable_diffusion_img2img.py). Alternatively, you can also play with [this notebook](https://colab.research.google.com/drive/15MS1tAK69Nbdv6cnkN0U8GrJAYwtbuw9?usp=sharing).  
 
