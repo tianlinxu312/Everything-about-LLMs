@@ -112,7 +112,9 @@ The first half of the model is a pre-trained CLIP (frozen once trained), i.e., t
 
 ![image](./imgs/dalle2.png)
 
-In CLIP, we have trained two encoders to extract features from image and text inputs.  
+In CLIP, we have trained two encoders to extract features from image and text inputs.  DALL·E 2 extracts the text embeddings with a pretrained CLIP model, and pass it through a prior model to learn the image embeddings. This prior can be an autoregressive model or a diffusion model.  Finally, a diffusion model is used to produce an image conditioned on the image embeddings learned from the prior as well as the CLIP text embedding optionally.  
+
+DALL·E 2 also enables classifier-free CLIP guidance as used in GLIDE by randomly setting the CLIP embeddings to zero 10% of the time.  
 
 ### Stable Diffusion
 
