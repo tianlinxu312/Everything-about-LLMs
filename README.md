@@ -1,27 +1,5 @@
 # Everything-about-LLMs
 
-1. [Getting started](#Getting-started-Karpathys-nanoGPT)
-2. [Fine-tuning](#Fine-tuning)
-    1. [LoRA](#LoRA)
-    2. [QLoRA](#QLoRA)
-    3. [RLHF](#RLHF)
-3. [Multimodal models](#Multimodal-models)
-    1. [CLIP](#CLIP)
-    2. [GLIDE](#GLIDE)
-    3. [DALL·E 2](#DALL·E-2)
-    4. [Stable Diffusion](#Stable-Diffusion)
-        1. [Implementation: Image to Image](#Image-to-Image)
-4. [Engineering magics for training an LLM](#Engineering-magics-for-training-an-LLM)
-    1. [Memory Optimization: ZeRO](#Memory-Optimization-ZeRO)
-    2. [Model parallelism: MegatronLM](#Model-parallelism-MegatronLM)
-    3. [Pipeline Parallelism](#Pipeline-Parallelism)
-    4. [Checkpointing and Deterministic Training](#Checkpointing-and-Deterministic-Training)
-    5. [FlashAttention](#FlashAttention)
-    6. [KV caching](#KV-caching)
-    7. [Gradient checkpointing](#Gradient-checkpointing)
-    8. [Data efficiency](#Data-efficiency)
-
-
 ## Getting started: Karpathy's nanoGPT
 [This folder](./karpathys_gpt) contains Karpathy's implementation of a mini version of GPT. 
 You can run it to train a character-level language model on your laptop to generate shakespearean (well kind of :see_no_evil:) text.
