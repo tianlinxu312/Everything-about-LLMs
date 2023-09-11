@@ -118,11 +118,13 @@ DALL·E 2 also enables classifier-free CLIP guidance as used in GLIDE by randoml
 
 ### Stable Diffusion
 
+Stable diffusion is a latent diffusion model[^12] which operates in the latent space instead of the original data space, see the figure below. 
+
 <p align="center">
 <img src="./imgs/stable-diffusion.png" alt="image" width="950"/>
 </p>
 
-Stable diffusion is a latent diffusion model[^12] which operates in the latent space instead of the original data space.  In the figure, the red-shaded and green-shaded parts illustrate the pixel and the latent space. First, stable diffusion uses a pretrained model (VAGAN[^13] in this case) to encode the images to latent, and decode the learned latent back to images. In practice, this reduces whatever high-resolutional images to a latent representation of the shape [64x64xnumber of channels].  In the latent space, stable diffusion deploys a diffusion model equipped with a denoising U-Net.   In each denoising diffusion step, the U-Net is augmented with the cross-attention machanishm which computes the attention between the noisy latent and whichever conditons that's included in the model for conditional generation.  
+The red-shaded and green-shaded parts illustrate the pixel and the latent space. First, stable diffusion uses a pretrained model (VQGAN[^13] in this case) to encode the images to latent, and decode the learned latent back to images. In practice, this reduces whatever high-resolutional images to a latent representation of the shape [64x64xnumber of channels].  In the latent space, stable diffusion deploys a diffusion model equipped with a denoising U-Net.   In each denoising diffusion step, the U-Net is augmented with the cross-attention machanishm which computes the attention between the noisy latent and whichever conditons that's included in the model for conditional generation.  
 
 #### Image to Image
 An implementation of Stable Diffusion Image-to-Image can be found [here](./stable_diffusion_img2img.py). Alternatively, you can also play with [this notebook](https://colab.research.google.com/drive/15MS1tAK69Nbdv6cnkN0U8GrJAYwtbuw9?usp=sharing).  
