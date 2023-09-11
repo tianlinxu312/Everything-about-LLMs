@@ -122,6 +122,8 @@ DALL·E 2 also enables classifier-free CLIP guidance as used in GLIDE by randoml
 <img src="./imgs/stable-diffusion.png" alt="image" width="950"/>
 </p>
 
+Stable diffusion is a latent diffusion model[^12] which operates in the latent space instead of the original data space.  In the figure, the red-shaded and green-shaded parts illustrate the pixel and the latent space. First, stable diffusion uses a pretrained model (VAGAN[^13] in this case) to encode the images to latent, and decode the learned latent back to images. In practice, this reduces whatever high-resolutional images to a latent representation of the shape [64x64xnumber of channels].  In the latent space, stable diffusion deploys a diffusion model equipped with a denoising U-Net.   In each denoising diffusion step, the U-Net is augmented with the cross-attention machanishm which computes the attention between the noisy latent and whichever conditons that's included in the model for conditional generation.  
+
 #### Image to Image
 An implementation of Stable Diffusion Image-to-Image can be found [here](./stable_diffusion_img2img.py). Alternatively, you can also play with [this notebook](https://colab.research.google.com/drive/15MS1tAK69Nbdv6cnkN0U8GrJAYwtbuw9?usp=sharing).  
 
@@ -167,3 +169,8 @@ An implementation of Stable Diffusion Image-to-Image can be found [here](./stabl
 [^10]: Dhariwal, P. and Nichol, A., 2021. [Diffusion models beat gans on image synthesis](https://arxiv.org/pdf/2105.05233.pdf). Advances in neural information processing systems, 34, pp.8780-8794.
 
 [^11]: Ho, J. and Salimans, T., 2022. [Classifier-free diffusion guidance](https://arxiv.org/abs/2207.12598). arXiv preprint arXiv:2207.12598.
+
+[^12]: Rombach, R., Blattmann, A., Lorenz, D., Esser, P. and Ommer, B., 2022. [High-resolution image synthesis with latent diffusion models](https://openaccess.thecvf.com/content/CVPR2022/papers/Rombach_High-Resolution_Image_Synthesis_With_Latent_Diffusion_Models_CVPR_2022_paper.pdf). In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition (pp. 10684-10695).
+
+[^13]: Esser, P., Rombach, R. and Ommer, B., 2021. [Taming transformers for high-resolution image synthesis](https://openaccess.thecvf.com/content/CVPR2021/papers/Esser_Taming_Transformers_for_High-Resolution_Image_Synthesis_CVPR_2021_paper.pdf). In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition (pp. 12873-12883).
+
