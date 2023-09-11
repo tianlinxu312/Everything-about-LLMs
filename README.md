@@ -32,6 +32,14 @@ If you are completely new to language modelling, [this video](https://www.youtub
 You can find much more details about the code in [Karpathy's original repo](https://github.com/karpathy/nanoGPT/tree/master#install). 
 The code in this folder has been adapted to contain the minimal running code. 
 
+## Lauguage models
+
+### BERT
+
+### GPT
+
+### LLaMA
+
 
 ## Fine-tuning
 ### LoRA
@@ -124,9 +132,14 @@ Stable diffusion is a latent diffusion model[^12] which operates in the latent s
 <img src="./imgs/stable-diffusion.png" alt="image" width="950"/>
 </p>
 
-The red-shaded and green-shaded parts illustrate the pixel and the latent space. First, stable diffusion uses a pretrained model (VQGAN[^13] in this case) to encode the images to latent, and decode the learned latent back to images. In practice, this reduces a high-resolution image to a latent representation of the shape [64x64xnumber of channels].  In the latent space, stable diffusion deploys a diffusion model equipped with a denoising U-Net.  In each denoising diffusion step, the U-Net is augmented with the cross-attention machanishm which computes the attention between the noisy latent and whichever conditons included in the model for conditional generation.  
+The red-shaded and green-shaded parts illustrate the pixel and the latent space. First, stable diffusion uses a pretrained model (VQGAN[^13] in this case) to encode the images to latent, and decode the learned latent back to images. In practice, this reduces a high-resolution image to a latent representation of the shape [64x64xnumber of channels].  
+
+In the latent space, stable diffusion deploys a diffusion model equipped with a denoising U-Net.  In each denoising diffusion step, the U-Net is augmented with the cross-attention machanishm which computes the attention between the noisy latent and whichever conditons included in the model for conditional generation.  
+
+No surprise that classifier-free CLIP guidance is also used in stable diffusion.  The "switch" in the figure above controls whether the model produces images with or without conditions.   
 
 #### Image to Image
+
 An implementation of Stable Diffusion Image-to-Image can be found [here](./stable_diffusion_img2img.py). Alternatively, you can also play with [this notebook](https://colab.research.google.com/drive/15MS1tAK69Nbdv6cnkN0U8GrJAYwtbuw9?usp=sharing).  
 
 
