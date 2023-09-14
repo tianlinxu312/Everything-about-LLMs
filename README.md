@@ -4,8 +4,7 @@
 
 ### Transformers
 
-The figure below from the original paper[^14] shows the architecture of a transformer. There are so many amazing videos and blogs that explain transfomers very well.  
-I wouldn't provide just one more version of it.  You can google around or read the paper yourself. I will actually provide an implementation of it here.
+The figure below from the original paper[^14] shows the architecture of a transformer. There are so many amazing videos and blogs that explain transfomers very well. I wouldn't provide just one more version of it.  You can google around or read the paper yourself. I will actually provide an implementation of it here.
 
 <p align="center">
 <img src="./imgs/transformer.png" alt="image" width="750"/>
