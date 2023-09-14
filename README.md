@@ -1,6 +1,13 @@
 # Everything-about-LLMs
 
-## Getting started: Karpathy's nanoGPT
+## Lauguage models
+
+### Transformers
+
+### BERT
+
+### GPT
+
 [This folder](./karpathys_gpt) contains Karpathy's implementation of a mini version of GPT. 
 You can run it to train a character-level language model on your laptop to generate shakespearean (well kind of :see_no_evil:) text.
 He did a very nice tutorial to walk through the code almost line by line. 
@@ -9,12 +16,6 @@ If you are completely new to language modelling, [this video](https://www.youtub
 
 You can find much more details about the code in [Karpathy's original repo](https://github.com/karpathy/nanoGPT/tree/master#install). 
 The code in this folder has been adapted to contain the minimal running code. 
-
-## Lauguage models
-
-### BERT
-
-### GPT
 
 ### LLaMA
 
