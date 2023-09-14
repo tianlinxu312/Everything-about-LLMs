@@ -11,7 +11,7 @@ I wouldn't provide just one more version of it.  You can google around or read t
 <img src="./imgs/transformer.png" alt="image" width="750"/>
 </p>
 
-Separated by the purple line in the middle, we will call the structure above this line the encoder and below the line decoder for the remainder of the repo.  
+Separated by the magenta line in the middle, we will call the structure above this line the encoder and below the line the decoder for the remainder of the repo.  
 
 ### BERT
 
