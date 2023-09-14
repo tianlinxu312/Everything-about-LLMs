@@ -4,6 +4,14 @@
 
 ### Transformers
 
+The figure below from the original paper[^14] shows the architecture of a transformer.  
+
+<p align="center">
+<img src="./imgs/transformer.png" alt="image" width="750"/>
+</p>
+
+
+
 ### BERT
 
 ### GPT
@@ -167,4 +175,6 @@ An implementation of Stable Diffusion Image-to-Image can be found [here](./stabl
 [^12]: Rombach, R., Blattmann, A., Lorenz, D., Esser, P. and Ommer, B., 2022. [High-resolution image synthesis with latent diffusion models](https://openaccess.thecvf.com/content/CVPR2022/papers/Rombach_High-Resolution_Image_Synthesis_With_Latent_Diffusion_Models_CVPR_2022_paper.pdf). In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition (pp. 10684-10695).
 
 [^13]: Esser, P., Rombach, R. and Ommer, B., 2021. [Taming transformers for high-resolution image synthesis](https://openaccess.thecvf.com/content/CVPR2021/papers/Esser_Taming_Transformers_for_High-Resolution_Image_Synthesis_CVPR_2021_paper.pdf). In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition (pp. 12873-12883).
+
+[^14]: Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A.N., Kaiser, Ł. and Polosukhin, I., 2017. [Attention is all you need](https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf). Advances in neural information processing systems, 30.
 
